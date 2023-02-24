@@ -1,9 +1,12 @@
-public class Bicycle {
+public class Bicycle extends Vehicle implements TransportTyre {
+    public Bicycle(String modelName, int wheelsCount) {
+        super(modelName, wheelsCount);
+    }
 
-    public String modelName;
-    public int wheelsCount;
-
-    public void updateTyre() {
+    @Override
+    public void updateTyre() { // этот метод тоже одинаковый для всех,
+        // поэтому его я тоже объединила в тот же интерфейс
         System.out.println("Меняем покрышку");
     }
+
 }
